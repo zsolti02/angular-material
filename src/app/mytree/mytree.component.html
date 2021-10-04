@@ -1,0 +1,30 @@
+<div>
+  <h1 style="color:white; text-align:center">Category</h1>
+</div>
+<hr>
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" style="background-color: #2c2c2c;">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding style="color:white">
+    <button mat-icon-button disabled></button>
+    <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
+      {{ node.type === 'file' ? 'description' : 'folder' }}
+    </mat-icon>
+    {{node.name}}
+  </mat-tree-node>
+
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding style="color:white">
+    <button mat-icon-button matTreeNodeToggle
+            [attr.aria-label]="'Toggle ' + node.name">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    <mat-icon class="type-icon" [attr.aria-label]="node.type + 'icon'">
+      {{ node.type ==='file' ? 'description' : 'folder' }}
+    </mat-icon>
+    {{node.name}}
+  </mat-tree-node>
+</mat-tree>
+<div>
+  <button class="button" mat-raised-button>Previous</button>
+  <button class="button1" mat-raised-button>Next</button>
+</div>

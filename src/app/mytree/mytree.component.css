@@ -1,0 +1,18 @@
+.type-icon {
+  color: #757575;
+  margin-right: 5px;
+}
+
+.button {
+  background-color: gray;
+  border: 2px solid white;
+  color: white;
+  margin-top: 20px;
+
+}
+
+.button1 {
+  background-color: grey;
+  color: white;
+  border: 2px solid white;
+}
